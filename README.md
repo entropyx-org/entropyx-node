@@ -1,13 +1,12 @@
 
-<h1>EntropyX On Rust</h1>
+<h1>EntropyX</h1>
 
-Welcome to the Rust-based implementation of the EntropyX full-node and its ancillary libraries. The contained node release serves as a drop-in replacement to the established <a href="https://github.com/entropyxnet/entropyx">Golang node</a> and to date is the recommended node software for the EntropyX network, introducing developers to the possibilities of Rust in the EntropyX network's context.
-
-We invite developers and blockchain enthusiasts to collaborate, test, and optimize our Rust implementation. Each line of code here is an opportunity to contribute to the open-source blockchain movement, shaping a platform designed for scalability and speed without compromising on security and decentralization.
-
+Welcome to the EntropyX full-node and its ancillary libraries. This Rust implementation is the official node software for the EntropyX network, offering developers a high-performance blockchain platform with exceptional scalability and speed.
+We invite developers and blockchain enthusiasts to collaborate, test, and optimize our implementation. Each line of code here is an opportunity to contribute to the open-source blockchain movement, shaping a platform designed for scalability and speed without compromising on security and decentralization.
 Your feedback, contributions, and issue reports will be integral to evolving this codebase and continuing its maturity as a reliable node in the EntropyX network.
+The default branch of this repository is master and new contributions are constantly merged into it. For a stable branch corresponding to the latest stable release please pull and compile the stable branch.
 
-The default branch of this repository is `master` and new contributions are constantly merged into it. For a stable branch corresponding to the latest stable release please pull and compile the `stable` branch. 
+> Note: EntropyX is a fork of the Kaspa network's Rust implementation.(https://github.com/kaspanet/rusty-kaspa)
 
 ## Installation
   <details>
@@ -234,10 +233,6 @@ The framework is compatible with all major desktop and mobile browsers.
 cargo run --release --bin entropyx -- --testnet
   ```
 
-  **Testnet 11**
-  
-  For participation in the 10BPS test network (TN11), see the following detailed [guide](docs/testnet11.md).
-
 <details>
 
   <summary>
@@ -314,105 +309,3 @@ wRPC
   the EntropyX WASM framework.
 
 </details>
-
-
-
-<details>
-
-
-## Benchmarking & Testing
-
-
-<details> 
-
-<summary>Simulation framework (Simpa)</summary>
-
-Logging in `entropyx` and `simpa` can be [filtered](https://docs.rs/env_logger/0.10.0/env_logger/#filtering-results) by either:
-
-The current codebase supports a full in-process network simulation, building an actual DAG over virtual time with virtual delay and benchmarking validation time (following the simulation generation). 
-
-To see the available commands
-```bash 
-cargo run --release --bin simpa -- --help
-``` 
-
-The following command will run a simulation to produce 1000 blocks with communication delay of 2 seconds and 8 BPS (blocks per second) while attempting to fill each block with up to 200 transactions.   
-
-```bash
-cargo run --release --bin simpa -- -t=200 -d=2 -b=8 -n=1000
-```
-
-</details>
-
-
-
-
-<details> 
-
-<summary>Heap Profiling</summary>
-
-Heap-profiling in `entropyx` and `simpa` can be done by enabling `heap` feature and profile using the `--features` argument
-
-```bash
-cargo run --bin entropyx --profile heap --features=heap
-```
-
-It will produce `{bin-name}-heap.json` file in the root of the workdir, that can be inspected by the [dhat-viewer](https://github.com/unofficial-mirror/valgrind/tree/master/dhat)
-
-</details>
-
-
-<details> 
-
-<summary>Tests</summary>
-
-
-**Run unit and most integration tests**
-
-```bash
-cd rusty-entropyx
-cargo test --release
-// or install nextest and run
-```
-
-
-
-**Using nextest**
-
-```bash
-cd rusty-entropyx
-cargo nextest run --release
-```
-
-
-
-</details>
-
-
-<details> 
-
-<summary>Benchmarks</summary>
-
-```bash
-cd rusty-entropyx
-cargo bench
-```
-
-</details>
-
-<details> 
-
-<summary>Logging</summary>
-
-Logging in `entropyx` and `simpa` can be [filtered](https://docs.rs/env_logger/0.10.0/env_logger/#filtering-results) by either:
-
-1. Defining the environment variable `RUST_LOG`
-2. Adding the --loglevel argument like in the following example:
-
-    ```
-    (cargo run --bin entropyx -- --loglevel info,entropyx_rpc_core=trace,entropyx_grpc_core=trace,consensus=trace,entropyx_core=trace) 2>&1 | tee ~/rusty-entropyx.log
-    ```
-    In this command we set the `loglevel` to `INFO`.
-
-</details>
-
