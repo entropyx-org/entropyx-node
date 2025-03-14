@@ -1,0 +1,41 @@
+[[resolver]]
+enable = false
+address = "http://127.0.0.1:8888"
+
+[[group]]
+template = "https://*.entropyx.stream"
+nodes = ["eric","maxim","sean","troy"]
+
+[[group]]
+template = "https://*.entropyx.red"
+nodes = ["john", "mike", "paul", "alex"]
+
+[[group]]
+template = "https://*.entropyx.green"
+nodes = ["jake", "mark", "adam", "liam"]
+
+[[group]]
+template = "https://*.entropyx.blue"
+nodes = ["noah", "ryan", "jack", "luke"]
+
+# [[group]]
+# enable = true
+# template = "https://*.entropyx-ng.org"
+# nodes = ["cole", "ivan", "oscar", "zane"]
+
+# [[group]]
+# enable = true
+# template = "https://*.entropyx-ng.io"
+# nodes = ["gary", "hugo", "finn", "evan"]
+
+# [[group]]
+# enable = true
+# template = "https://*.entropyx-ng.net"
+# nodes = ["neil", "dave", "kyle", "toby"]
+
+# ---
+
+# [[group]]
+# enable = false
+# template = "https://*."
+# nodes = ["rudy", "todd", "clay", "walt"]

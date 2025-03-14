@@ -1,0 +1,38 @@
+[package]
+name = "entropyx-p2p-flows"
+description = "EntropyX p2p flows"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+entropyx-core.workspace = true
+entropyx-consensus-core.workspace = true
+entropyx-consensus-notify.workspace = true
+entropyx-p2p-lib.workspace = true
+entropyx-utils.workspace = true
+entropyx-utils-tower.workspace = true
+entropyx-hashes.workspace = true
+entropyx-muhash.workspace = true
+entropyx-connectionmanager.workspace = true
+entropyx-addressmanager.workspace = true
+entropyx-consensusmanager.workspace = true
+entropyx-mining.workspace = true
+entropyx-notify.workspace = true
+
+async-trait.workspace = true
+futures = { workspace = true, features = ["alloc"] }
+indexmap.workspace = true
+itertools.workspace = true
+log.workspace = true
+parking_lot.workspace = true
+rand.workspace = true
+thiserror.workspace = true
+tokio = { workspace = true, features = ["rt-multi-thread", "macros", "signal"] }
+tokio-stream = { workspace = true, features = ["net"] }
+uuid = { workspace = true, features = ["v4", "fast-rng"] }
+chrono.workspace = true

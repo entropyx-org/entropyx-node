@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <script type="module">
+            import * as entropyx from './entropyx-rpc/entropyx-rpc.js';
+            (async () => {
+                await entropyx.default('./entropyx-rpc/entropyx-rpc_bg.wasm');
+                console.log(entropyx.version());
+            })();
+        </script>
+    </head>
+    <body></body>
+</html>

@@ -1,0 +1,38 @@
+[package]
+name = "entropyx-index-processor"
+description = "EntropyX index processor"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+entropyx-consensus-core.workspace = true
+entropyx-consensus-notify.workspace = true
+entropyx-consensusmanager.workspace = true
+entropyx-core.workspace = true
+entropyx-database.workspace = true
+entropyx-hashes.workspace = true
+entropyx-index-core.workspace = true
+entropyx-notify.workspace = true
+entropyx-utils.workspace = true
+entropyx-utxoindex.workspace = true
+
+async-channel.workspace = true
+async-trait.workspace = true
+derive_more.workspace = true
+futures.workspace = true
+log.workspace = true
+paste.workspace = true
+thiserror.workspace = true
+tokio = { workspace = true, features = [ "rt-multi-thread", "macros", "signal" ]}
+triggered.workspace = true
+
+[dev-dependencies]
+entropyx-consensus.workspace = true
+parking_lot.workspace = true
+tokio = { workspace = true, features = ["rt", "macros"] }
+rand = {workspace = true,  features = [ "small_rng" ]}

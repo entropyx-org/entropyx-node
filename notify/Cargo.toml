@@ -1,0 +1,48 @@
+[package]
+name = "entropyx-notify"
+description = "EntropyX notification subsystem"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+async-channel.workspace = true
+async-trait.workspace = true
+borsh.workspace = true
+derive_more.workspace = true
+futures-util.workspace = true
+futures.workspace = true
+indexmap.workspace = true
+itertools.workspace = true
+entropyx-addresses.workspace = true
+entropyx-consensus-core.workspace = true
+entropyx-core.workspace = true
+entropyx-hashes.workspace = true
+entropyx-txscript-errors.workspace = true
+entropyx-txscript.workspace = true
+entropyx-utils.workspace = true
+log.workspace = true
+parking_lot.workspace = true
+paste.workspace = true
+rand.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+triggered.workspace = true
+workflow-core.workspace = true
+workflow-log.workspace = true
+workflow-serializer.workspace = true
+
+[dev-dependencies]
+criterion.workspace = true
+entropyx-alloc.workspace = true
+entropyx-math.workspace = true
+tokio = { workspace = true, features = ["rt", "macros"] }
+workflow-perf-monitor.workspace = true
+
+[[bench]]
+name = "bench"
+harness = false

@@ -1,0 +1,37 @@
+[package]
+name = "entropyx-wrpc-server"
+description = "EntropyX wRPC server"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+async-trait.workspace = true
+borsh = { workspace = true, features = ["rc"] }
+futures.workspace = true
+entropyx-consensus-core.workspace = true
+entropyx-core.workspace = true
+entropyx-grpc-client.workspace = true
+entropyx-notify.workspace = true
+entropyx-rpc-core.workspace = true
+entropyx-rpc-macros.workspace = true
+entropyx-rpc-service.workspace = true
+entropyx-utils.workspace = true
+log.workspace = true
+num_cpus.workspace = true
+paste.workspace = true
+serde = { workspace = true, features = ["rc"] }
+thiserror.workspace = true
+tokio.workspace = true
+workflow-core.workspace = true
+workflow-log.workspace = true
+workflow-rpc.workspace = true
+workflow-serializer.workspace = true
+rustls.workspace = true

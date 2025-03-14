@@ -1,0 +1,130 @@
+[package]
+name = "entropyx-wallet-core"
+description = "EntropyX wallet library"
+keywords = ["entropyx", "wallet"]
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[features]
+multi-user = []
+wasm32-keygen = [
+    # "entropyx-consensus-wasm/wasm32-types",
+]
+wasm32-core = [
+    "entropyx-consensus-wasm/wasm32-sdk",
+    "entropyx-consensus-core/wasm32-sdk",
+    "entropyx-wrpc-client/wasm32-sdk",
+    "entropyx-wrpc-wasm/wasm32-sdk",
+    "entropyx-wasm-core/wasm32-sdk",
+]
+wasm32-sdk = [
+    "wasm32-core"
+]
+default = ["wasm32-sdk"]
+# default = []
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+aes.workspace = true
+ahash.workspace = true
+argon2.workspace = true
+async-channel.workspace = true
+async-std.workspace = true
+async-trait.workspace = true
+base64.workspace = true
+borsh.workspace = true
+cfb-mode.workspace = true
+cfg-if.workspace = true
+chacha20poly1305.workspace = true
+convert_case.workspace = true
+crypto_box.workspace = true
+dashmap.workspace = true
+derivative.workspace = true
+downcast.workspace = true
+evpkdf.workspace = true
+faster-hex.workspace = true
+fixedstr.workspace = true
+futures.workspace = true
+heapless.workspace = true
+hmac.workspace = true
+itertools.workspace = true
+js-sys.workspace = true
+entropyx-addresses.workspace = true
+entropyx-bip32.workspace = true
+entropyx-consensus-client.workspace = true
+entropyx-consensus-core.workspace = true
+entropyx-consensus-wasm.workspace = true
+entropyx-core.workspace = true
+entropyx-hashes.workspace = true
+entropyx-metrics-core.workspace = true
+entropyx-notify.workspace = true
+entropyx-rpc-core.workspace = true
+entropyx-txscript-errors.workspace = true
+entropyx-txscript.workspace = true
+entropyx-utils.workspace = true
+entropyx-wallet-keys.workspace = true
+entropyx-wallet-macros.workspace = true
+entropyx-wallet-pskt.workspace = true
+entropyx-wasm-core.workspace = true
+entropyx-wrpc-client.workspace = true
+entropyx-wrpc-wasm.workspace = true
+md-5.workspace = true
+pad.workspace = true
+pbkdf2.workspace = true
+rand.workspace = true
+regex.workspace = true
+ripemd.workspace = true
+secp256k1.workspace = true
+separator.workspace = true
+serde_json.workspace = true
+serde-wasm-bindgen.workspace = true
+serde.workspace = true
+sha1.workspace = true
+sha2.workspace = true
+slugify-rs.workspace = true
+sorted-insert.workspace = true
+thiserror.workspace = true
+wasm-bindgen-futures.workspace = true
+wasm-bindgen.workspace = true
+workflow-core.workspace = true
+workflow-log.workspace = true
+workflow-node.workspace = true
+workflow-rpc.workspace = true
+workflow-store.workspace = true
+workflow-wasm.workspace = true
+xxhash-rust.workspace = true
+zeroize.workspace = true
+indexed_db_futures.workspace = true
+
+[dependencies.web-sys]
+workspace = true
+features = [
+    'Storage',
+    'Window',
+    'IdbFactory',
+    'IdbDatabase',
+    'IdbOpenDbOptions',
+    'IdbOpenDbRequest',
+    'IdbTransaction',
+    'IdbCursorDirection',
+]
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+home.workspace = true
+
+[dev-dependencies]
+hex-literal.workspace = true
+serde_repr.workspace = true
+
+[target.'cfg(not(target_arch = "wasm32"))'.dev-dependencies]
+tokio.workspace = true
+
+[lints]
+workspace = true

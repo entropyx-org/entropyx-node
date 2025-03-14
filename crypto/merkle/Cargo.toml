@@ -1,0 +1,13 @@
+[package]
+name = "entropyx-merkle"
+description = "EntropyX merkle tree library"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+entropyx-hashes.workspace = true

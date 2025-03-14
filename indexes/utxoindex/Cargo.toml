@@ -1,0 +1,29 @@
+[package]
+name = "entropyx-utxoindex"
+description = "EntropyX UTXO index"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+futures.workspace = true
+entropyx-consensus-core.workspace = true
+entropyx-consensusmanager.workspace = true
+entropyx-core.workspace = true
+entropyx-database.workspace = true
+entropyx-hashes.workspace = true
+entropyx-index-core.workspace = true
+entropyx-utils.workspace = true
+log.workspace = true
+parking_lot.workspace = true
+rocksdb.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+entropyx-consensus.workspace = true
+rand = { workspace = true, features = ["small_rng"] }

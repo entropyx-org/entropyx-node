@@ -1,0 +1,28 @@
+#!/bin/bash
+set -e
+
+./build-web $@
+
+if [ "$1" == "--keygen" ]; then
+    echo "building keygen"
+    typedoc --name "entropyx WASM32 SDK - Key Generation" --sourceLinkExternal --readme ./README.md --options ./build/docs/ --out ./docs/entropyx-keygen ./build/docs/entropyx-keygen.ts
+elif [ "$1" == "--rpc" ]; then
+    echo "building rpc"
+    typedoc --name "entropyx WASM32 SDK - RPC" --sourceLinkExternal --readme ./README.md --options ./build/docs/ --out ./docs/entropyx-rpc ./build/docs/entropyx-rpc.ts
+elif [ "$1" == "--core" ]; then
+    echo "building core"
+    typedoc --name "entropyx WASM32 SDK - Core" --sourceLinkExternal --readme ./README.md --options ./build/docs/ --out ./docs/entropyx-core ./build/docs/entropyx-core.ts
+elif [ "$1" == "--sdk" ]; then
+    echo "building full"
+    typedoc --name "entropyx WASM32 SDK" --sourceLinkExternal --readme ./README.md --options ./build/docs/ --out ./docs/entropyx ./build/docs/entropyx.ts
+else
+    echo "building keygen"
+    typedoc --name "entropyx WASM32 SDK - Key Generation" --sourceLinkExternal --readme ./README.md --options ./build/docs/ --out ./docs/entropyx-keygen ./build/docs/entropyx-keygen.ts
+    echo "building rpc"
+    typedoc --name "entropyx WASM32 SDK - RPC" --sourceLinkExternal --readme ./README.md --options ./build/docs/ --out ./docs/entropyx-rpc ./build/docs/entropyx-rpc.ts
+    echo "building core"
+    typedoc --name "entropyx WASM32 SDK - Core" --sourceLinkExternal --readme ./README.md --options ./build/docs/ --out ./docs/entropyx-core ./build/docs/entropyx-core.ts
+    echo "building full"
+    typedoc --name "entropyx WASM32 SDK" --sourceLinkExternal --readme ./README.md --options ./build/docs/ --out ./docs/entropyx ./build/docs/entropyx.ts
+
+fi

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+wasm-pack build --target nodejs --out-name entropyx-rpc --out-dir nodejs/entropyx-rpc --features wasm32-sdk

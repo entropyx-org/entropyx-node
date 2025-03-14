@@ -1,0 +1,46 @@
+[package]
+name = "entropyx-wrpc-wasm"
+description = "EntropyX wRPC WASM client"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[features]
+wasm32-sdk = ["entropyx-wrpc-client/wasm32-sdk"]
+default = []
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+ahash.workspace = true
+async-std.workspace = true
+cfg-if.workspace = true
+entropyx-addresses.workspace = true
+entropyx-consensus-core.workspace = true
+entropyx-consensus-client.workspace = true
+entropyx-consensus-wasm.workspace = true
+entropyx-notify.workspace = true
+entropyx-wrpc-client.workspace = true
+entropyx-rpc-core.workspace = true
+entropyx-rpc-macros.workspace = true
+entropyx-wasm-core.workspace = true
+serde_json.workspace = true
+serde-wasm-bindgen.workspace = true
+serde.workspace = true
+workflow-log.workspace = true
+workflow-rpc.workspace = true
+workflow-wasm.workspace = true
+wasm-bindgen.workspace = true
+js-sys.workspace = true
+wasm-bindgen-futures.workspace = true
+workflow-core.workspace = true
+futures.workspace = true
+ring = { version = "0.17", features = ["wasm32_unknown_unknown_js"] }
+
+[lints]
+workspace = true

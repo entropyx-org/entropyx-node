@@ -1,0 +1,24 @@
+[package]
+name = "entropyx-consensusmanager"
+description = "EntropyX consensus library"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+duration-string.workspace = true
+futures-util.workspace = true
+futures.workspace = true
+itertools.workspace = true
+entropyx-consensus-core.workspace = true
+entropyx-consensus-notify.workspace = true
+entropyx-core.workspace = true
+entropyx-utils.workspace = true
+log.workspace = true
+parking_lot.workspace = true
+rand.workspace = true
+tokio.workspace = true

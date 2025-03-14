@@ -1,0 +1,60 @@
+[package]
+name = "entropyx-rpc-core"
+description = "EntropyX RPC core"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[features]
+wasm32-sdk = [
+    "entropyx-consensus-client/wasm32-sdk",
+    "entropyx-consensus-wasm/wasm32-sdk"
+]
+
+[dependencies]
+entropyx-addresses.workspace = true
+entropyx-consensus-core.workspace = true
+entropyx-consensus-client.workspace = true
+entropyx-consensus-notify.workspace = true
+entropyx-consensus-wasm.workspace = true
+entropyx-core.workspace = true
+entropyx-hashes.workspace = true
+entropyx-index-core.workspace = true
+entropyx-math.workspace = true
+entropyx-mining-errors.workspace = true
+entropyx-notify.workspace = true
+entropyx-txscript.workspace = true
+entropyx-utils.workspace = true
+entropyx-rpc-macros.workspace = true
+
+async-channel.workspace = true
+async-trait.workspace = true
+borsh.workspace = true
+cfg-if.workspace = true
+derive_more.workspace = true
+downcast.workspace = true
+faster-hex.workspace = true
+hex.workspace = true
+js-sys.workspace = true
+log.workspace = true
+paste.workspace = true
+rand.workspace = true
+serde-wasm-bindgen.workspace = true
+serde.workspace = true
+smallvec.workspace = true
+thiserror.workspace = true
+uuid.workspace = true
+wasm-bindgen.workspace = true
+workflow-core.workspace = true
+workflow-serializer.workspace = true
+workflow-wasm.workspace = true
+
+[dev-dependencies]
+serde_json.workspace = true
+
+[lints]
+workspace = true

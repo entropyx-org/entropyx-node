@@ -1,0 +1,18 @@
+[package]
+name = "entropyx-wrpc-simple-client-example"
+description = "EntropyX wRPC simple client example"
+publish = false
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+futures.workspace = true
+entropyx-rpc-core.workspace = true
+entropyx-wrpc-client.workspace = true
+tokio.workspace = true
+

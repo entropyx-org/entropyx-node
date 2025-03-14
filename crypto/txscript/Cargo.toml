@@ -1,0 +1,50 @@
+[package]
+name = "entropyx-txscript"
+description = "EntropyX txscript engine library"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[features]
+wasm32-core = []
+wasm32-sdk = []
+
+[dependencies]
+blake2b_simd.workspace = true
+borsh.workspace = true
+cfg-if.workspace = true
+hexplay.workspace = true
+indexmap.workspace = true
+itertools.workspace = true
+entropyx-addresses.workspace = true
+entropyx-consensus-core.workspace = true
+entropyx-hashes.workspace = true
+entropyx-txscript-errors.workspace = true
+entropyx-utils.workspace = true
+entropyx-wasm-core.workspace = true
+log.workspace = true
+parking_lot.workspace = true
+rand.workspace = true
+secp256k1.workspace = true
+serde_json.workspace = true
+serde-wasm-bindgen.workspace = true
+serde.workspace = true
+sha2.workspace = true
+smallvec.workspace = true
+thiserror.workspace = true
+wasm-bindgen.workspace = true
+workflow-wasm.workspace = true
+
+[dev-dependencies]
+criterion.workspace = true
+smallvec.workspace = true
+hex.workspace = true
+serde_json.workspace = true
+
+[[bench]]
+name = "bench"
+harness = false

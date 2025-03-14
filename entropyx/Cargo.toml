@@ -1,0 +1,65 @@
+[package]
+name = "entropyx"
+description = "EntropyX full node daemon"
+keywords = ["entropyx", "blockdag"]
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[lib]
+name = "entropyx_lib"
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+entropyx-alloc.workspace = true # This changes the global allocator for all of the next dependencies so should be kept first
+
+entropyx-addresses.workspace = true
+entropyx-addressmanager.workspace = true
+entropyx-consensus-core.workspace = true
+entropyx-consensus-notify.workspace = true
+entropyx-consensus.workspace = true
+entropyx-consensusmanager.workspace = true
+entropyx-core.workspace = true
+entropyx-database.workspace = true
+entropyx-grpc-server.workspace = true
+entropyx-hashes.workspace = true
+entropyx-index-processor.workspace = true
+entropyx-mining.workspace = true
+entropyx-notify.workspace = true
+entropyx-p2p-flows.workspace = true
+entropyx-perf-monitor.workspace = true
+entropyx-rpc-core.workspace = true
+entropyx-rpc-service.workspace = true
+entropyx-txscript.workspace = true
+entropyx-utils.workspace = true
+entropyx-utils-tower.workspace = true
+entropyx-utxoindex.workspace = true
+entropyx-wrpc-server.workspace = true
+
+async-channel.workspace = true
+cfg-if.workspace = true
+clap.workspace = true
+dhat = { workspace = true, optional = true }
+dirs.workspace = true
+futures-util.workspace = true
+log.workspace = true
+num_cpus.workspace = true
+rand.workspace = true
+rayon.workspace = true
+serde.workspace = true
+tempfile.workspace = true
+thiserror.workspace = true
+tokio = { workspace = true, features = ["rt", "macros", "rt-multi-thread"] }
+workflow-log.workspace = true
+
+toml = "0.8.10"
+serde_with = "3.7.0"
+
+[features]
+heap = ["dhat", "entropyx-alloc/heap"]
+devnet-prealloc = ["entropyx-consensus/devnet-prealloc"]
+semaphore-trace = ["entropyx-utils/semaphore-trace"]

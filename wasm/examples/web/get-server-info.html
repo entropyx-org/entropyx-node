@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./resources/style.css">
+        <script type="module">
+            import { log, stringify, currentNetwork } from './resources/utils.js';
+
+            import * as entropyx from '../../web/entropyx-rpc/entropyx.js';
+            let { Resolver, RpcClient, Encoding } = entropyx;
+
+            (async () => {
+                await entropyx.default('../../web/entropyx-rpc/entropyx_bg.wasm');
+
+                let networkId = currentNetwork();
+                log(`Connecting to EntropyX network...`);
+                log(`Selected network is ${networkId}...`);
+                
+                const rpc = new RpcClient({
+                    resolver : new Resolver(),
+                    networkId,
+                });
+
+                await rpc.connect();
+                log("Connected to", rpc.url);
+                
+                log("GetServerInfo request...");
+                const info = await rpc.getServerInfo();
+                log("GetServerInfo response:", info);
+
+                log("Disconnected...");
+                await rpc.disconnect();
+            })();
+
+        </script>
+    </head>
+    <body></body>
+</html>

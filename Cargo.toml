@@ -1,0 +1,339 @@
+[workspace]
+resolver = "2"
+members = [
+    "daemon",
+    "cli",
+    "core",
+    "wallet/macros",
+    "wallet/core",
+    "wallet/native",
+    "wallet/wasm",
+    "wallet/bip32",
+    "wallet/keys",
+    "wallet/pskt",
+    "consensus",
+    "consensus/core",
+    "consensus/client",
+    "consensus/notify",
+    "consensus/pow",
+    "consensus/wasm",
+    "entropyx",
+    "simpa",
+    "wasm",
+    "wasm/core",
+    "math",
+    "crypto/hashes",
+    "crypto/muhash",
+    "crypto/addresses",
+    "crypto/merkle",
+    "notify",
+    "indexes/core",
+    "indexes/processor",
+    "indexes/utxoindex",
+    "rpc/macros",
+    "rpc/core",
+    "rpc/service",
+    "rpc/grpc/core",
+    "rpc/grpc/client",
+    "rpc/grpc/server",
+    "rpc/wrpc/server",
+    "rpc/wrpc/client",
+    "rpc/wrpc/proxy",
+    "rpc/wrpc/wasm",
+    "rpc/wrpc/examples/subscriber",
+    "rpc/wrpc/examples/simple_client",
+    "mining",
+    "mining/errors",
+    "protocol/p2p",
+    "protocol/flows",
+    "components/addressmanager",
+    "components/connectionmanager",
+    "components/consensusmanager",
+    "database",
+    "crypto/txscript",
+    "crypto/txscript/errors",
+    "testing/integration",
+    "utils",
+    "utils/tower",
+    "rothschild",
+    "metrics/core",
+    "metrics/perf_monitor",
+    "utils/alloc",
+]
+
+[workspace.package]
+rust-version = "1.81.0"
+version = "1.15.2"
+authors = ["EntropyX developers"]
+license = "ISC"
+repository = "https://github.com/entropyxnet/rusty-entropyx"
+edition = "2021"
+include = [
+    "src/**/*.rs",
+    "src/**/*.s",
+    "src/**/*.r",
+    "proto/**/*.proto",
+    "benches/**/*.rs",
+    "build.rs",
+    "Cargo.toml",
+    "Cargo.lock",
+]
+
+[workspace.dependencies]
+# entropyx-testing-integration = { version = "1.15.2", path = "testing/integration" }
+entropyx-addresses = { version = "1.15.2", path = "crypto/addresses" }
+entropyx-addressmanager = { version = "1.15.2", path = "components/addressmanager" }
+entropyx-bip32 = { version = "1.15.2", path = "wallet/bip32" }
+entropyx-cli = { version = "1.15.2", path = "cli" }
+entropyx-connectionmanager = { version = "1.15.2", path = "components/connectionmanager" }
+entropyx-consensus = { version = "1.15.2", path = "consensus" }
+entropyx-consensus-core = { version = "1.15.2", path = "consensus/core" }
+entropyx-consensus-client = { version = "1.15.2", path = "consensus/client" }
+entropyx-consensus-notify = { version = "1.15.2", path = "consensus/notify" }
+entropyx-consensus-wasm = { version = "1.15.2", path = "consensus/wasm" }
+entropyx-consensusmanager = { version = "1.15.2", path = "components/consensusmanager" }
+entropyx-core = { version = "1.15.2", path = "core" }
+entropyx-daemon = { version = "1.15.2", path = "daemon" }
+entropyx-database = { version = "1.15.2", path = "database" }
+entropyx-grpc-client = { version = "1.15.2", path = "rpc/grpc/client" }
+entropyx-grpc-core = { version = "1.15.2", path = "rpc/grpc/core" }
+entropyx-grpc-server = { version = "1.15.2", path = "rpc/grpc/server" }
+entropyx-hashes = { version = "1.15.2", path = "crypto/hashes" }
+entropyx-index-core = { version = "1.15.2", path = "indexes/core" }
+entropyx-index-processor = { version = "1.15.2", path = "indexes/processor" }
+entropyx-math = { version = "1.15.2", path = "math" }
+entropyx-merkle = { version = "1.15.2", path = "crypto/merkle" }
+entropyx-metrics-core = { version = "1.15.2", path = "metrics/core" }
+entropyx-mining = { version = "1.15.2", path = "mining" }
+entropyx-mining-errors = { version = "1.15.2", path = "mining/errors" }
+entropyx-muhash = { version = "1.15.2", path = "crypto/muhash" }
+entropyx-notify = { version = "1.15.2", path = "notify" }
+entropyx-p2p-flows = { version = "1.15.2", path = "protocol/flows" }
+entropyx-p2p-lib = { version = "1.15.2", path = "protocol/p2p" }
+entropyx-perf-monitor = { version = "1.15.2", path = "metrics/perf_monitor" }
+entropyx-pow = { version = "1.15.2", path = "consensus/pow" }
+entropyx-rpc-core = { version = "1.15.2", path = "rpc/core" }
+entropyx-rpc-macros = { version = "1.15.2", path = "rpc/macros" }
+entropyx-rpc-service = { version = "1.15.2", path = "rpc/service" }
+entropyx-txscript = { version = "1.15.2", path = "crypto/txscript" }
+entropyx-txscript-errors = { version = "1.15.2", path = "crypto/txscript/errors" }
+entropyx-utils = { version = "1.15.2", path = "utils" }
+entropyx-utils-tower = { version = "1.15.2", path = "utils/tower" }
+entropyx-utxoindex = { version = "1.15.2", path = "indexes/utxoindex" }
+entropyx-wallet = { version = "1.15.2", path = "wallet/native" }
+entropyx-wallet-cli-wasm = { version = "1.15.2", path = "wallet/wasm" }
+entropyx-wallet-keys = { version = "1.15.2", path = "wallet/keys" }
+entropyx-wallet-pskt = { version = "1.15.2", path = "wallet/pskt" }
+entropyx-wallet-core = { version = "1.15.2", path = "wallet/core" }
+entropyx-wallet-macros = { version = "1.15.2", path = "wallet/macros" }
+entropyx-wasm = { version = "1.15.2", path = "wasm" }
+entropyx-wasm-core = { version = "1.15.2", path = "wasm/core" }
+entropyx-wrpc-client = { version = "1.15.2", path = "rpc/wrpc/client" }
+entropyx-wrpc-proxy = { version = "1.15.2", path = "rpc/wrpc/proxy" }
+entropyx-wrpc-server = { version = "1.15.2", path = "rpc/wrpc/server" }
+entropyx-wrpc-wasm = { version = "1.15.2", path = "rpc/wrpc/wasm" }
+entropyx-wrpc-example-subscriber = { version = "1.15.2", path = "rpc/wrpc/examples/subscriber" }
+entropyx = { version = "1.15.2", path = "entropyx" }
+entropyx-alloc = { version = "1.15.2", path = "utils/alloc" }
+
+# external
+aes = "0.8.3"
+ahash = "0.8.6"
+arc-swap = "1.6.0"
+argon2 = "0.5.2"
+async-channel = "2.0.0"
+async-std = { version = "1.12.0", features = ['attributes'] }
+async-stream = "0.3.5"
+async-trait = "0.1.74"
+base64 = "0.22.1"
+bincode = { version = "1.3.3", default-features = false }
+blake2b_simd = "1.0.2"
+borsh = { version = "1.5.1", features = ["derive", "rc"] }
+bs58 = { version = "0.5.0", features = ["check"], default-features = false }
+cc = "1.0.83"
+cfb-mode = "0.8.2"
+cfg-if = "1.0.0"
+chacha20poly1305 = "0.10.1"
+clap = { version = "4.4.7", features = ["derive", "string", "cargo"] }
+convert_case = "0.6.0"
+criterion = { version = "0.5.1", default-features = false }
+crossbeam-channel = "0.5.8"
+ctrlc = "3.4.1"
+crypto_box = { version = "0.9.1", features = ["chacha20"] }
+dashmap = "6.0.1"
+derivative = "2.2.0"
+derive_builder = "0.20.0"
+derive_more = "0.99.17"
+# derive_more = { version = "1.0.0", features = ["full"] }
+dhat = "0.3.2"
+dirs = "5.0.1"
+downcast = "0.11.0"
+downcast-rs = "1.2.0"
+duration-string = "0.4.0"
+enum-primitive-derive = "0.3.0"
+event-listener = "2.5.3" # TODO "3.0.1"
+evpkdf = "0.2.0"
+faster-hex = "0.9.0"
+fixedstr = { version = "0.5.4", features = ["serde"] }
+flate2 = "1.0.28"
+futures = { version = "0.3.29" }
+futures-util = { version = "0.3.29", default-features = false, features = ["alloc"] }
+getrandom = { version = "0.2.10", features = ["js"] }
+h2 = "0.4.6"
+# h2 = "0.3.21"
+heapless = "0.8.0"
+# heapless = "0.7.16"
+hex = { version = "0.4.3", features = ["serde"] }
+hex-literal = "0.4.1"
+hexplay = "0.3.0"
+hmac = { version = "0.12.1", default-features = false }
+home = "0.5.5"
+igd-next = { version = "0.14.2", features = ["aio_tokio"] }
+indexmap = "2.1.0"
+intertrait = "0.2.2"
+ipnet = "2.9.0"
+itertools = "0.13.0"
+js-sys = "0.3.70"
+keccak = "0.1.4"
+local-ip-address = "0.6.1"
+log = "0.4.20"
+log4rs = "1.2.0"
+mac_address = "1.1.7"
+malachite-base = "0.4.4"
+malachite-nz = "0.4.4"
+md-5 = "0.10.6"
+num = "0.4.1"
+num_cpus = "1.16.0"
+num-traits = "0.2.17"
+once_cell = "1.18.0"
+pad = "0.1.6"
+parking_lot = "0.12.1"
+paste = "1.0.14"
+pbkdf2 = "0.12.2"
+portable-atomic = { version = "1.5.1", features = ["float"] }
+prost = "0.12.1"
+# prost = "0.13.1"
+rand = "0.8.5"
+rand_chacha = "0.3.1"
+rand_core = { version = "0.6.4", features = ["std"] }
+rand_distr = "0.4.3"
+rayon = "1.8.0"
+regex = "1.10.2"
+ripemd = { version = "0.1.3", default-features = false }
+rlimit = "0.10.1"
+rocksdb = "0.22.0"
+secp256k1 = { version = "0.29.0", features = [
+    "global-context",
+    "rand-std",
+    "serde",
+] } # TODO "0.28.0"
+separator = "0.4.1"
+seqlock = "0.2.0"
+serde = { version = "1.0.190", features = ["derive", "rc"] }
+serde_bytes = "0.11.12"
+serde_json = "1.0.107"
+serde_repr = "0.1.18"
+serde-value = "0.7.0"
+serde-wasm-bindgen = "0.6.1"
+sha1 = "0.10.6"
+sha2 = "0.10.8"
+sha3 = "0.10.8"
+slugify-rs = "0.0.3"
+smallvec = { version = "1.11.1", features = ["serde"] }
+sorted-insert = "0.2.3"
+statest = "0.2.2"
+statrs = "0.13.0" # TODO "0.16.0"
+subtle = { version = "2.5.0", default-features = false }
+sysinfo = "0.31.2"
+tempfile = "3.8.1"
+textwrap = "0.16.0"
+thiserror = "1.0.50"
+tokio = { version = "1.33.0", features = ["sync", "rt-multi-thread"] }
+tokio-stream = "0.1.14"
+toml = "0.8.8"
+tonic = { version = "0.10.2", features = ["tls-webpki-roots", "gzip", "transport"] }
+tonic-build = { version = "0.10.2", features = ["prost"] }
+triggered = "0.1.2"
+uuid = { version = "1.5.0", features = ["v4", "fast-rng", "serde"] }
+wasm-bindgen = { version = "0.2.93", features = ["serde-serialize"] }
+wasm-bindgen-futures = "0.4.43"
+wasm-bindgen-test = "0.3.43"
+web-sys = "0.3.70"
+xxhash-rust = { version = "0.8.7", features = ["xxh3"] }
+zeroize = { version = "1.6.0", default-features = false, features = ["alloc"] }
+pin-project-lite = "0.2.13"
+tower-http = { version = "0.4.4", features = [
+    "map-response-body",
+    "map-request-body",
+] }
+tower = "0.4.7"
+hyper = "0.14.27"
+chrono = "0.4.31"
+indexed_db_futures = "0.5.0"
+# workflow dependencies that are not a part of core libraries
+
+# workflow-perf-monitor = { path = "../../../workflow-perf-monitor-rs" }
+workflow-perf-monitor = "0.0.2"
+nw-sys = "0.1.6"
+rustls = { version = "0.23", default-features = false, features = ["ring"] }
+
+# workflow dependencies
+workflow-core = { version = "0.18.0" }
+workflow-d3 = { version = "0.18.0" }
+workflow-dom = { version = "0.18.0" }
+workflow-http = { version = "0.18.0", default-features = false, features = ["rustls-tls-webpki-roots", "http2", "charset", "macos-system-configuration"] }
+workflow-log = { version = "0.18.0" }
+workflow-node = { version = "0.18.0" }
+workflow-nw = { version = "0.18.0" }
+workflow-rpc = { version = "0.18.0", default-features = false, features = ["rustls-tls-webpki-roots"] }
+workflow-serializer = { version = "0.18.0" }
+workflow-store = { version = "0.18.0" }
+workflow-terminal = { version = "0.18.0" }
+workflow-wasm = { version = "0.18.0" }
+
+# if below is enabled, this means that there is an ongoing work
+# on the workflow-rs crate. This requires that you clone workflow-rs
+# into a sibling folder from https://github.com/workflow-rs/workflow-rs
+# workflow-core = { path = "../workflow-rs/core" }
+# workflow-d3 = { path = "../workflow-rs/d3" }
+# workflow-dom = { path = "../workflow-rs/dom" }
+# # Same features as default but with rustls-tls-webpki-roots instead of native-tls
+# workflow-http = { path = "../workflow-rs/http", default-features = false, features = ["rustls-tls-webpki-roots", "http2", "charset", "macos-system-configuration"] }
+# workflow-log = { path = "../workflow-rs/log" }
+# workflow-node = { path = "../workflow-rs/node" }
+# workflow-nw = { path = "../workflow-rs/nw" }
+# workflow-rpc = { path = "../workflow-rs/rpc", default-features = false, features = ["rustls-tls-webpki-roots"] }
+# workflow-serializer = { path = "../workflow-rs/serializer" }
+# workflow-store = { path = "../workflow-rs/store" }
+# workflow-terminal = { path = "../workflow-rs/terminal" }
+# workflow-wasm = { path = "../workflow-rs/wasm" }
+
+
+# ---
+# workflow-core = { git = "https://github.com/workflow-rs/workflow-rs.git", branch = "master" }
+# workflow-d3 = { git = "https://github.com/workflow-rs/workflow-rs.git", branch = "master" }
+# workflow-dom = { git = "https://github.com/workflow-rs/workflow-rs.git", branch = "master" }
+# workflow-http = { git = "https://github.com/workflow-rs/workflow-rs.git", branch = "master", default-features = false, features = ["rustls-tls-webpki-roots", "http2", "charset", "macos-system-configuration"] }
+# workflow-log = { git = "https://github.com/workflow-rs/workflow-rs.git", branch = "master" }
+# workflow-node = { git = "https://github.com/workflow-rs/workflow-rs.git", branch = "master" }
+# workflow-nw = { git = "https://github.com/workflow-rs/workflow-rs.git", branch = "master" }
+# workflow-rpc = { git = "https://github.com/workflow-rs/workflow-rs.git", branch = "master", default-features = false, features = ["rustls-tls-webpki-roots"]  }
+# workflow-serializer = { git = "https://github.com/workflow-rs/workflow-rs.git", branch = "master" }
+# workflow-store = { git = "https://github.com/workflow-rs/workflow-rs.git", branch = "master" }
+# workflow-terminal = { git = "https://github.com/workflow-rs/workflow-rs.git", branch = "master" }
+# workflow-wasm = { git = "https://github.com/workflow-rs/workflow-rs.git", branch = "master" }
+# https://github.com/aspectron/nw-sys
+# nw-sys = { path = "../nw-sys" }
+
+[profile.release]
+lto = "thin"
+strip = true
+overflow-checks = true
+
+[profile.heap]
+inherits = "release"
+debug = true
+strip = false
+
+[workspace.lints.clippy]
+empty_docs = "allow"

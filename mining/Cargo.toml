@@ -1,0 +1,41 @@
+[package]
+name = "entropyx-mining"
+description = "EntropyX mining"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+entropyx-addresses.workspace = true
+entropyx-consensus-core.workspace = true
+entropyx-consensusmanager.workspace = true
+entropyx-core.workspace = true
+entropyx-hashes.workspace = true
+entropyx-mining-errors.workspace = true
+entropyx-muhash.workspace = true
+entropyx-txscript.workspace = true
+entropyx-utils.workspace = true
+
+futures-util.workspace = true
+itertools.workspace = true
+log.workspace = true
+parking_lot.workspace = true
+rand.workspace = true
+serde.workspace = true
+smallvec.workspace = true
+sweep-bptree = "0.4.1"
+thiserror.workspace = true
+tokio = { workspace = true, features = ["rt-multi-thread", "macros", "signal"] }
+
+[dev-dependencies]
+entropyx-txscript.workspace = true
+criterion.workspace = true
+secp256k1.workspace = true
+
+[[bench]]
+name = "bench"
+harness = false

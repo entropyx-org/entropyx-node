@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+
+wasm-pack build --weak-refs --target nodejs --out-name entropyx --out-dir nodejs/entropyx --features wasm32-sdk

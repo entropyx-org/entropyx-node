@@ -1,0 +1,30 @@
+[package]
+name = "entropyx-muhash"
+description = "EntropyX Muhash library"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+entropyx-hashes.workspace = true
+entropyx-math.workspace = true
+rand_chacha.workspace = true
+serde.workspace = true
+
+# For the exhuative tests, should only be enabled with release
+rayon = { workspace = true, optional = true }
+
+[dev-dependencies]
+criterion.workspace = true
+rand.workspace = true
+
+[[bench]]
+name = "bench"
+harness = false
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(fuzzing)'] }

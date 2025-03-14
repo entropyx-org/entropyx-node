@@ -1,0 +1,9 @@
+use entropyx_cli_lib::{entropyx_cli, TerminalOptions};
+
+#[tokio::main]
+async fn main() {
+    let result = entropyx_cli(TerminalOptions::new().with_prompt("$ "), None).await;
+    if let Err(err) = result {
+        println!("{err}");
+    }
+}
